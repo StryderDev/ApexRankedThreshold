@@ -22,7 +22,7 @@ async function tweetScore() {
 				.then(function (response) {
 					const data = response.data;
 
-					const tweetText = `-Approximate RP/AP needed for Apex Predator-\n\nPlatform: BR / Arenas\nPC: ${data.PC.min_BR_RP.toLocaleString()} RP / ${data.PC.min_AR_AP.toLocaleString()} AP\nPlayStation: ${data.PS4.min_BR_RP.toLocaleString()} RP / ${data.PS4.min_AR_AP.toLocaleString()} AP\nXbox: ${data.X1.min_BR_RP.toLocaleString()} RP / ${data.X1.min_AR_AP.toLocaleString()} AP\n\nhttps://ranked.apexstats.dev/\n#ApexLegends #ApexLegendsRanked`;
+					const tweetText = `-Rp/AP Threshold for Apex Predator-\n\nPlatform: BR / Arenas\nPC: ${data.PC.Battle_Royale.toLocaleString()} RP / ${data.PC.Arenas.toLocaleString()} AP\nPlayStation: ${data.PS4.Battle_Royale.toLocaleString()} RP / ${data.PS4.Arenas.toLocaleString()} AP\nXbox: ${data.X1.Battle_Royale.toLocaleString()} RP / ${data.X1.Arenas.toLocaleString()} AP\n\nhttps://ranked.apexstats.dev/\n#ApexLegends #ApexLegendsRanked`;
 
 					const tweet = () => {
 						const onFinish = (err, reply) => {
@@ -63,19 +63,3 @@ async function tweetScore() {
 }
 
 tweetScore();
-
-//const tweet = () => {
-//	const text = `Approximate RP/AP needed for Apex Predator:\n\nPlatform: BR / Arenas\nPC: 10,000 BR / 8,000 AP\nPlayStation: 10,000 BR / 8,000 AP\nXbox: 10,000 BR / 8,000 AP\n\nhttps://ranked.apexstats.dev/\n#ApexLegends #ApexLegendsRanked`;
-
-//	const onFinish = (err, reply) => {
-//		if (err) {
-//			console.log("Error: ", err.message);
-//		} else {
-//			console.log("Success: ", reply);
-//		}
-//	};
-
-//	T.post("statuses/update", { status: text }, onFinish);
-//};
-
-// tweet();
