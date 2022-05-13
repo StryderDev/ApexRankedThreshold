@@ -1,6 +1,6 @@
 {
 	"name": "twitterrpbot",
-	"version": "0.0.3",
+	"version": "0.0.3-1",
 	"description": "",
 	"main": "main.js",
 	"scripts": {
