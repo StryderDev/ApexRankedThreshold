@@ -21,8 +21,8 @@ async function tweetScore() {
 				.then(function (response) {
 					const data = response.data;
 
-					const tweetText = `-RP/AP Threshold for Apex Predator-\n\nPlatform: BR / Arenas\nPC: ${data.PC.Battle_Royale.toLocaleString()} RP / ${data.PC.Arenas.toLocaleString()} AP\nPlayStation: ${data.PS4.Battle_Royale.toLocaleString()} RP / ${data.PS4.Arenas.toLocaleString()} AP\nXbox: ${data.X1.Battle_Royale.toLocaleString()} RP / ${data.X1.Arenas.toLocaleString()} AP\nSwitch: ${data.Switch.Battle_Royale.toLocaleString()} RP / ${data.Switch.Arenas.toLocaleString()} AP\n\n#ApexLegends\nLast Updated: ${new Math.floor(
-						Date().getTime() / 1000
+					const tweetText = `-RP/AP Threshold for Apex Predator-\n\nPlatform: BR / Arenas\nPC: ${data.PC.Battle_Royale.toLocaleString()} RP / ${data.PC.Arenas.toLocaleString()} AP\nPlayStation: ${data.PS4.Battle_Royale.toLocaleString()} RP / ${data.PS4.Arenas.toLocaleString()} AP\nXbox: ${data.X1.Battle_Royale.toLocaleString()} RP / ${data.X1.Arenas.toLocaleString()} AP\nSwitch: ${data.Switch.Battle_Royale.toLocaleString()} RP / ${data.Switch.Arenas.toLocaleString()} AP\n\n#ApexLegends\nLast Updated: ${Math.floor(
+						new Date().getTime() / 1000
 					)}`;
 
 					const tweet = () => {
