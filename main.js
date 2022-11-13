@@ -17,7 +17,7 @@ async function tweetScore() {
 
 		if (now.getMinutes() === 00 && now.getSeconds() < 30) {
 			axios
-				.get("https://api.apexstats.dev/minPred")
+				.get("https://api.jumpmaster.xyz/misc/predThreshold")
 				.then(function (response) {
 					const data = response.data;
 
