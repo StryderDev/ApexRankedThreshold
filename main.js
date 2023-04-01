@@ -16,12 +16,17 @@ async function tweetScore() {
 		var now = new Date();
 
 		if (now.getMinutes() === 00 && now.getSeconds() < 30) {
+			// if (now.getMinutes()) {
 			axios
-				.get("https://api.jumpmaster.xyz/misc/predThreshold")
+				.get(
+					`https://api.mozambiquehe.re/predator?auth=${config.ALS_TOKEN}`
+				)
 				.then(function (response) {
-					const data = response.data;
+					const data = response.data.RP;
 
-					const tweetText = `-RP Threshold for Apex Predator-\n\nPC: ${data.PC.Battle_Royale.toLocaleString()} RP\nPlayStation: ${data.PS4.Battle_Royale.toLocaleString()} RP\nXbox: ${data.X1.Battle_Royale.toLocaleString()} RP\nSwitch: ${data.Switch.Battle_Royale.toLocaleString()} RP\n\n#ApexLegends #ApexLegendsRanked`;
+					// const tweetText = `-RP Threshold for Apex Predator-\n\nPC: ${data.PC.Battle_Royale.toLocaleString()} RP\nPlayStation: ${data.PS4.Battle_Royale.toLocaleString()} RP\nXbox: ${data.X1.Battle_Royale.toLocaleString()} RP\nSwitch: ${data.Switch.Battle_Royale.toLocaleString()} RP\n\n#ApexLegends #ApexLegendsRanked`;
+
+					const tweetText = `-RP Threshold for Apex Predator-\n\nPC: ${data.PC.val.toLocaleString()} RP\nPlayStation: ${data.PS4.val.toLocaleString()} RP\nXbox: ${data.X1.val.toLocaleString()} RP\nSwitch: ${data.SWITCH.val.toLocaleString()} RP\n\n#ApexLegends #ApexLegendsRanked`;
 
 					const tweet = () => {
 						const onFinish = (err, reply) => {
