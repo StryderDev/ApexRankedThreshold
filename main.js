@@ -1,14 +1,16 @@
 const Twit = require("twit");
-const config = require("./config.json");
-const moment = require("moment");
 const axios = require("axios");
 const chalk = require("chalk");
+const moment = require("moment");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const T = new Twit({
-	consumer_key: config.API_KEY,
-	consumer_secret: config.API_SECRET,
-	access_token: config.ACCESS_TOKEN,
-	access_token_secret: config.ACCESS_TOKEN_SECRET,
+	consumer_key: process.env.API_KEY,
+	consumer_secret: process.env.API_SECRET,
+	access_token: process.env.ACCESS_TOKEN,
+	access_token_secret: process.env.ACCESS_TOKEN_SECRET,
 });
 
 async function tweetScore() {
@@ -19,7 +21,7 @@ async function tweetScore() {
 			// if (now.getMinutes()) {
 			axios
 				.get(
-					`https://api.mozambiquehe.re/predator?auth=${config.ALS_TOKEN}`
+					`https://api.mozambiquehe.re/predator?auth=${process.env.ALS_TOKEN}`
 				)
 				.then(function (response) {
 					const data = response.data.RP;
