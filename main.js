@@ -13,13 +13,13 @@ const twitterClient = new TwitterApi({
 
 async function tweetScore() {
 	axios
-		.get(
-			`https://api.mozambiquehe.re/predator?auth=${process.env.ALS_TOKEN}`
-		)
+		.get(`https://api.jumpmaster.xyz/misc/predThreshold`)
 		.then(async function (response) {
-			const data = response.data.RP;
+			const data = response.data;
 
-			const tweetText = `-RP Threshold for Apex Predator-\n\nPC: ${data.PC.val.toLocaleString()} RP\nPlayStation: ${data.PS4.val.toLocaleString()} RP\nXbox: ${data.X1.val.toLocaleString()} RP\nSwitch: ${data.SWITCH.val.toLocaleString()} RP\n\n#ApexLegends #ApexLegendsRanked`;
+			const tweetText = `-RP Threshold for Apex Predator-\n\nPC: ${data.PC.value.toLocaleString()} RP [${data.PC.count.toLocaleString()} Players]\nPlayStation: ${data.Playstation.value.toLocaleString()} RP [${data.Playstation.count.toLocaleString()} Players]\nXbox: ${data.Xbox.value.toLocaleString()} RP [${data.Xbox.count.toLocaleString()} Players]\nSwitch: ${data.Switch.value.toLocaleString()} RP [${data.Switch.count.toLocaleString()} Players]\n\n#ApexLegends #ApexLegendsRanked\n(${
+				data.timestamp
+			})`;
 
 			try {
 				await twitterClient.v2.tweet(tweetText);
@@ -27,9 +27,9 @@ async function tweetScore() {
 				console.log(e);
 			}
 
-			console.log("Posted tweet.");
+			console.log(tweetText);
 
-			// console.log(tweetText);
+			// console.log("Posted tweet.");
 		})
 		.catch(function (error) {
 			console.log(error);
