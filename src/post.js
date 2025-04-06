@@ -29,7 +29,7 @@ async function postToBluesky() {
 			const PS = data.Playstation;
 			const SW = data.Switch;
 
-			const postText = `-RP Threshold for Apex Predator-\n\nPC: ${PC.value.toLocaleString()} RP [${PC.count.toLocaleString()} Players]\nXbox: ${XB.value.toLocaleString()} RP [${XB.count.toLocaleString()} Players]\nPlayStation: ${PS.value.toLocaleString()} RP [${PS.count.toLocaleString()} Players]\nNintendo Switch: ${SW.value.toLocaleString()} RP [${SW.count.toLocaleString()} Players]\n(Tiemstamp: ${time})\n#ApexLegends #ApexLegendsRanked`;
+			const postText = `-RP Threshold for Apex Predator-\n\nPC: ${PC.value.toLocaleString()} RP [${PC.count.toLocaleString()} Players]\nXbox: ${XB.value.toLocaleString()} RP [${XB.count.toLocaleString()} Players]\nPlayStation: ${PS.value.toLocaleString()} RP [${PS.count.toLocaleString()} Players]\nNintendo Switch: ${SW.value.toLocaleString()} RP [${SW.count.toLocaleString()} Players]\n(${time})`;
 
 			console.log(postText);
 
