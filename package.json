@@ -2,7 +2,7 @@
 	"name": "blueskyrpbot",
 	"version": "0.1.1",
 	"description": "",
-	"main": "main.js",
+	"main": "src/post.js",
 	"scripts": {
 		"dev": "nodemon ."
 	},
@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@atproto/api": "^0.14.20",
 		"axios": "^1.8.4",
+		"chalk": "^4.1.2",
 		"dotenv": "^16.4.7"
 	}
 }
